@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+React Uygulaması Oluşturma
+Dökümantasyonunda da belirtildiği üzere React, baştan sona aşamalı olarak kullanılabilecek şekilde tasarlanmıştır. Bu demek oluyor ki ihtiyaca göre az ya da daha fazla kullanmak mümkün. Var olan bir HTML sayfasına React'i entegre edebileceğimiz gibi bazı araçları da içeren geliştirme ortamının hazırlanmasıyla birlikte yeni bir tek sayfa uygulama (Single Page Application) oluşturabiliriz. Bu yazıda create-react-app ile yeni bir React uygulaması oluşturmayı öğreneceğiz.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Giriş
+Bir React uygulaması oluşturmak için bazı bağımlılık ve gereksinimlere ihtiyaç duyuyoruz. Bunların içerisinde hem modüler bileşenler oluşturmak için kullanılan zorunlu paketler (react, react-dom) hem de konfigürasyon dosyaları (webpack, babel) yer alıyor. Bunların hepsini ve daha fazlasını bizim için yapan bir araç olan create-react-app ile kolay ve hızlı bir şekilde bir React.js uygulaması oluşturmak mümkün. Bu araç React ekibi tarafından sunuluyor ve hem React öğrenmeye yeni başlayanlar hem de belirli ölçekte proje geliştirmek isteyenler için hazır bir iskelet yapı sağlıyor. Bu sayede Babel, webpack gibi bağımlılıkları manuel olarak konfigüre etmeye gerek kalmadan hızlıca bir React.js uygulaması geliştirmeye başlayabiliyoruz.
 
-## Available Scripts
+Hazırlık
+create-react-app ile proje ortamını oluşturabilmek için bilgisayarımıza Node.js kurmamız gerekiyor. Node'un yüklü olup olmadığını kontrol etmek için terminalde node -v komutunu çalıştırabilirsiniz. Eğer Node yüklüyse bu kodu çalıştırdığınızda bir versiyon numara çıktısı görmeniz gerekir. Eğer yüklü değilse bu bağlantıdan indirip kurabilirsiniz.
 
-In the project directory, you can run:
+Ayrıca geliştirme yapabilmek için bir kod editöre ihtiyacımız var. En çok kullanılan kod editörlerden biri olan Visual Studio Code'u ücretsiz olarak indirebilirsiniz.
 
-### `npm start`
+Node.js'i bilgisayarımıza kurduktan sonra npm de otomatik olarak yüklenmiş oluyor. npm (node package manager) bir paket yöneticisi olup Node.js'ten ayrı bir projedir. Bu yüzden bilgisayarınızda Node.js kurulu olsa bile bir react projesi oluşturmadan önce terminalde npm install -g npm@latest komutunu çalıştırarak en güncel versiyonda olduğundan emin olabilirsiniz. (macOS ve Linux kullanıcıları bu komutu çalıştırırken hata almaları durumunda komutun başına sudo ekleyerek çalıştırabilirler)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Node.js kurulumunu yapıp, npm'in güncel versiyonda olduğunu kontrol ettikten sonra artık React.js uygulaması için hazır bir iskelet yapı oluşturmaya geçebiliriz. Komutu çalıştırmadan önce doğru klasör dizininde olduğumuzdan emin olmalıyız. Terminal aracılığı ile React uygulamasını oluşturmak istediğimiz dosya dizinine gitmemiz için bize gerekli olan başlıca terminal komutlarından bahsetmek gerekirse;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+pwd komutu ile bulunduğumuz dizini görüntüleyebiliriz. (MacOS ve Linux için geçerli)
+cd komutu ile uygulamanın oluşturulmasını istediğimiz klasöre gidebiliriz.
+mkdir komutu ile yeni bir klasör oluşturabiliriz.
+Ayrıca terminali/komut istemini ilk başlattığınızda;
 
-### `npm test`
+Windows kullanıcıları: C:\Users\KullaniciAdi
+MacOS kullanıcıları: /Users/KullaniciAdi
+Linux kullanıcıları: /home/KullaniciAdi
+klasör dizininde olduğumuzu unutmamalıyız.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Bu gibi kavramlara uzaksanız. Kendi işletim sisteminizde terminal komutlarıyla ilgili aramalar yapmanızı tavsiye ederiz.
+Projeyi Oluşturma: create-react-app
+Bir React projesi oluşturmanın en kolay yöntemlerinden biri olan create-react-app ile projemizi oluşturabiliriz.
 
-### `npm run build`
+npx create-react-app ilk-uygulama komutunu kullanarak bulunduğumuz klasör dizininde bir React.js uygulaması oluşturabiliriz. (Unutmayın eğer terminal içerisinde yerinizi değiştirmediyseniz yukarıda yazdığımız klasörün altında oluşacak.)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Not: Burada kullandığımız npx npm 5.2+ ile gelen bir paket çalıştırma aracıdır.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Burada ilk-uygulama, uygulamaya vermek istediğimiz isimdir. Bunun yerine istediğiniz uygulama ismini verebilirsiniz (büyük harf içermediği sürece).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+React Uygulaması Oluşturma
+Dökümantasyonunda da belirtildiği üzere React, baştan sona aşamalı olarak kullanılabilecek şekilde tasarlanmıştır. Bu demek oluyor ki ihtiyaca göre az ya da daha fazla kullanmak mümkün. Var olan bir HTML sayfasına React'i entegre edebileceğimiz gibi bazı araçları da içeren geliştirme ortamının hazırlanmasıyla birlikte yeni bir tek sayfa uygulama (Single Page Application) oluşturabiliriz. Bu yazıda create-react-app ile yeni bir React uygulaması oluşturmayı öğreneceğiz.
 
-### `npm run eject`
+Giriş
+Bir React uygulaması oluşturmak için bazı bağımlılık ve gereksinimlere ihtiyaç duyuyoruz. Bunların içerisinde hem modüler bileşenler oluşturmak için kullanılan zorunlu paketler (react, react-dom) hem de konfigürasyon dosyaları (webpack, babel) yer alıyor. Bunların hepsini ve daha fazlasını bizim için yapan bir araç olan create-react-app ile kolay ve hızlı bir şekilde bir React.js uygulaması oluşturmak mümkün. Bu araç React ekibi tarafından sunuluyor ve hem React öğrenmeye yeni başlayanlar hem de belirli ölçekte proje geliştirmek isteyenler için hazır bir iskelet yapı sağlıyor. Bu sayede Babel, webpack gibi bağımlılıkları manuel olarak konfigüre etmeye gerek kalmadan hızlıca bir React.js uygulaması geliştirmeye başlayabiliyoruz.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Hazırlık
+create-react-app ile proje ortamını oluşturabilmek için bilgisayarımıza Node.js kurmamız gerekiyor. Node'un yüklü olup olmadığını kontrol etmek için terminalde node -v komutunu çalıştırabilirsiniz. Eğer Node yüklüyse bu kodu çalıştırdığınızda bir versiyon numara çıktısı görmeniz gerekir. Eğer yüklü değilse bu bağlantıdan indirip kurabilirsiniz.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ayrıca geliştirme yapabilmek için bir kod editöre ihtiyacımız var. En çok kullanılan kod editörlerden biri olan Visual Studio Code'u ücretsiz olarak indirebilirsiniz.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Node.js'i bilgisayarımıza kurduktan sonra npm de otomatik olarak yüklenmiş oluyor. npm (node package manager) bir paket yöneticisi olup Node.js'ten ayrı bir projedir. Bu yüzden bilgisayarınızda Node.js kurulu olsa bile bir react projesi oluşturmadan önce terminalde npm install -g npm@latest komutunu çalıştırarak en güncel versiyonda olduğundan emin olabilirsiniz. (macOS ve Linux kullanıcıları bu komutu çalıştırırken hata almaları durumunda komutun başına sudo ekleyerek çalıştırabilirler)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Node.js kurulumunu yapıp, npm'in güncel versiyonda olduğunu kontrol ettikten sonra artık React.js uygulaması için hazır bir iskelet yapı oluşturmaya geçebiliriz. Komutu çalıştırmadan önce doğru klasör dizininde olduğumuzdan emin olmalıyız. Terminal aracılığı ile React uygulamasını oluşturmak istediğimiz dosya dizinine gitmemiz için bize gerekli olan başlıca terminal komutlarından bahsetmek gerekirse;
 
-## Learn More
+pwd komutu ile bulunduğumuz dizini görüntüleyebiliriz. (MacOS ve Linux için geçerli)
+cd komutu ile uygulamanın oluşturulmasını istediğimiz klasöre gidebiliriz.
+mkdir komutu ile yeni bir klasör oluşturabiliriz.
+Ayrıca terminali/komut istemini ilk başlattığınızda;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Windows kullanıcıları: C:\Users\KullaniciAdi
+MacOS kullanıcıları: /Users/KullaniciAdi
+Linux kullanıcıları: /home/KullaniciAdi
+klasör dizininde olduğumuzu unutmamalıyız.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Bu gibi kavramlara uzaksanız. Kendi işletim sisteminizde terminal komutlarıyla ilgili aramalar yapmanızı tavsiye ederiz.
+Projeyi Oluşturma: create-react-app
+Bir React projesi oluşturmanın en kolay yöntemlerinden biri olan create-react-app ile projemizi oluşturabiliriz.
 
-### Code Splitting
+npx create-react-app ilk-uygulama komutunu kullanarak bulunduğumuz klasör dizininde bir React.js uygulaması oluşturabiliriz. (Unutmayın eğer terminal içerisinde yerinizi değiştirmediyseniz yukarıda yazdığımız klasörün altında oluşacak.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Not: Burada kullandığımız npx npm 5.2+ ile gelen bir paket çalıştırma aracıdır.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Burada ilk-uygulama, uygulamaya vermek istediğimiz isimdir. Bunun yerine istediğiniz uygulama ismini verebilirsiniz (büyük harf içermediği sürece).
