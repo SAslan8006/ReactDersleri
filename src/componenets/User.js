@@ -1,10 +1,13 @@
 import ProTypes from "prop-types";
 
 function User({ name, sname, isLoggedIn, age, friends, address }) {
+    if (!isLoggedIn) {
+        return <div>Giriş Yapmadınız...</div>;
+    }
     return (
         <>
             <div>
-                {isLoggedIn ? `Selam ${name} ${sname} ${age}` : "Giriş Yapınız!"}
+                {`Selam ${name} ${sname} ${age}`}
             </div>
             {friends && friends.map((friend) => <div key={friend.id}>{friend.name}</div>)}
         </>
@@ -24,6 +27,14 @@ User.propTypes = {
         zip: ProTypes.number.isRequired,
 
     })
+}
+
+User.defaultProps = {
+    isLoggedIn: false,
+    name: "İsimsiz",
+
+
+
 }
 
 export default User;
