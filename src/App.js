@@ -9,6 +9,8 @@ function App() {
     < >
       <h1>{isLoggedIn && `Benim Adım ${name} soyadım ${sname}`}</h1>
       <h1>{!isLoggedIn && `Giriş Yapmadınız...`}</h1>
+      <h1>{isLoggedIn ? `Benim Adım ${name} soyadım ${sname}` : `Giriş Yapmadınız...`}</h1>
+
 
     </>
   );
