@@ -1,6 +1,6 @@
 import ProTypes from "prop-types";
 
-function User({ name, sname, isLoggedIn, age, friends }) {
+function User({ name, sname, isLoggedIn, age, friends, address }) {
     return (
         <>
             <div>
@@ -16,8 +16,14 @@ User.propTypes = {
     sname: ProTypes.string.isRequired,
     isLoggedIn: ProTypes.bool.isRequired,
     //age ile ilgili işlem yapılmayacaksa matematiksel bunu hem string hem number yapabiliriz.
-    age: ProTypes.oneOfType([ProTypes.string, ProTypes.number]),
+    age: ProTypes.oneOfType([ProTypes.string, ProTypes.number]).isRequired,
     friends: ProTypes.array,
+    //Shape, bir nesnenin içeriğini belirlemek için PropTypes içinde kullanılır.
+    address: ProTypes.shape({
+        title: ProTypes.string.isRequired,
+        zip: ProTypes.number.isRequired,
+
+    })
 }
 
 export default User;
