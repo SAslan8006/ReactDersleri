@@ -32,9 +32,6 @@ User.propTypes = {
 User.defaultProps = {
     isLoggedIn: false,
     name: "İsimsiz",
-
-
-
 }
 
 export default User;
