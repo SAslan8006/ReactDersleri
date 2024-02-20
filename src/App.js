@@ -3,16 +3,16 @@ import './App.css';
 import User from './componenets/User';
 
 const friends = [
-  { id: 1, name: "Ahmet" },
-  { id: 2, name: "Mehmet" },
-  { id: 3, name: "Zeynep" },
-  { id: 4, name: "Ayse" },
-  { id: 5, name: "Yasemin" }
+  { id: 1, name: "Ahmet", age: 23 },
+  { id: 2, name: "Mehmet", age: 29 },
+  { id: 3, name: "Zeynep", age: 32 },
+  { id: 4, name: "Ayse", age: 45 },
+  { id: 5, name: "Yasemin", age: 40 }
 ]
 function App() {
   return (
     < >
-      <User name="Mehmet" sname="Kara" isLoggedIn={true}
+      <User name="Mehmet" sname="Kara" age={23} isLoggedIn={true}
         friends={friends} />
     </>
   );
