@@ -9,11 +9,12 @@ function User({ name, sname, isLoggedIn, age, friends }) {
     )
 }
 User.propTypes = {
-    name: ProTypes.string,
-    sname: ProTypes.string,
-    isLoggedIn: ProTypes.bool,
-    age: ProTypes.number,
-    friends: ProTypes.object
+    name: ProTypes.string.isRequired,
+    //isRequried zorunlu alan olduğunu belirtir. Eğer bu alana değeri verilmemişse uyarı verir
+    sname: ProTypes.string.isRequired,
+    isLoggedIn: ProTypes.bool.isRequired,
+    age: ProTypes.number.isRequired,
+    friends: ProTypes.array,
 }
 
 export default User;
