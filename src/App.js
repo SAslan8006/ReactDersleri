@@ -1,29 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import User from './componenets/User';
 
-const friends = [
-  { id: 1, name: "Ahmet", age: 23 },
-  { id: 2, name: "Mehmet", age: 29 },
-  { id: 3, name: "Zeynep", age: 32 },
-  { id: 4, name: "Ayse", age: 45 },
-  { id: 5, name: "Yasemin", age: 40 }
-]
 function App() {
+  const [name, setName] = useState("Ahmet");
+  const [age, setAge] = useState(20);
   return (
-    < >
-      <User
-        name="Mehmet"
-        sname="Kara"
-        age={23}
-        isLoggedIn={true}
-        friends={friends}
-        address={{
-          title: 'Ataşehir/İstanbul',
-          zip: 34755
-        }}
-      />
-    </>
+    <div className='App' >
+      <h1>Merhaba {name} Yaşım {age}</h1>
+      <button onClick={() => setName("Mehmet")}>İsim Değiştir</button>
+      <button onClick={() => setAge(25)}>Yaş Değiştir</button>
+
+    </div>
   );
 }
 
