@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import User from './componenets/User';
+import User from './User';
 
 const friends = [
   { id: 1, name: "Ahmet", age: 23 },
