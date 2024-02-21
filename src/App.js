@@ -3,11 +3,14 @@ import './App.css';
 import Sayac from './componenets/Sayac';
 import Example from './componenets/Example';
 import UseEfectUy from './componenets/UseEffect';
+import Unmount from './componenets/Unmount';
 
 function App() {
+  const [visible, setVisible] = useState(true);
   return (
     <div className='App' >
-      <UseEfectUy />
+      {visible && <Unmount />}
+      <button onClick={() => setVisible(!visible)}>Kaldır</button>
     </div >
   );
 }
