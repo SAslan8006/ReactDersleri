@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
+import Sayac from './componenets/Sayac';
+import Example from './componenets/Example';
 
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <div className='App' >
-      <h1>Sayaç</h1>
-      <h1>{count}</h1>
-      <button onClick={() => setCount(count - 1)}>Azalt</button>
-      <button onClick={() => setCount(count + 1)}>Yükselt</button>
-
+      < Example />
     </div >
   );
 }
