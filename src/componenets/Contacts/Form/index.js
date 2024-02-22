@@ -19,30 +19,27 @@ function Form({ addContact, contacts }) {
 
     }
     return (
-        <div>
-            <h1>Form</h1>
-            <form onSubmit={onSubmit}>
-                <div>
-                    <input
-                        placeholder="Full Name"
-                        name="fullname"
-                        value={form.fullname}
-                        onChange={onChangeInput}
-                    />
-                </div>
-                <div>
-                    <input
-                        placeholder='Telefon'
-                        name="phone_number"
-                        value={form.phone_number}
-                        onChange={onChangeInput}
-                    />
-                </div>
-                <div>
-                    <button onClick={onSubmit}>Add</button>
-                </div>
-            </form>
-        </div>
+        <form onSubmit={onSubmit}>
+            <div>
+                <input
+                    placeholder="Full Name"
+                    name="fullname"
+                    value={form.fullname}
+                    onChange={onChangeInput}
+                />
+            </div>
+            <div>
+                <input
+                    placeholder='Telefon'
+                    name="phone_number"
+                    value={form.phone_number}
+                    onChange={onChangeInput}
+                />
+            </div>
+            <div className='btn'>
+                <button onClick={onSubmit}>Add</button>
+            </div>
+        </form>
     )
 }
 
