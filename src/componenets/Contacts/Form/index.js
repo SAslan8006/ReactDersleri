@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function Form({ addContact }) {
-    const [form, setForm] = useState({ fullname: "", phone_number: "" });
+const initialFormValues = { fullname: "", phone_number: "" }
+function Form({ addContact, contacts }) {
+    const [form, setForm] = useState(initialFormValues);
+
+    useEffect(() => {
+        setForm(initialFormValues)
+    }, [contacts])
     const onChangeInput = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
@@ -10,8 +15,8 @@ function Form({ addContact }) {
         if (form.fullname === '' || form.phone_number === '') {
             return false;
         }
-        console.log(form);
-        addContact([form])
+        addContact([...contacts, form])
+
     }
     return (
         <div>
@@ -21,6 +26,7 @@ function Form({ addContact }) {
                     <input
                         placeholder="Full Name"
                         name="fullname"
+                        value={form.fullname}
                         onChange={onChangeInput}
                     />
                 </div>
@@ -28,6 +34,7 @@ function Form({ addContact }) {
                     <input
                         placeholder='Telefon'
                         name="phone_number"
+                        value={form.phone_number}
                         onChange={onChangeInput}
                     />
                 </div>
