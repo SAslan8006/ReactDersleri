@@ -2,44 +2,69 @@ import { useFormik } from 'formik';
 import React from 'react'
 import validationSchema from './Validation';
 function Signup() {
-    const { handleChange, handleSubmit, values } = useFormik({
-        initialValues: {
-            email: "",
-            password: "",
-            passwordConfirm: "",
+    const { handleChange, handleSubmit, handleBlur, values, errors, touched } =
+        useFormik({
+            initialValues: {
+                email: "",
+                password: "",
+                passwordConfirm: "",
+            },
 
-        },
+            onSubmit: (values) => {
+                alert(JSON.stringify(values, null, 2));
+            },
+            validationSchema,
+        });
 
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
-        },
-        validationSchema,
-    });
     return (
-        <div>  <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit}>
-
-                <label > Email </label>
+        <div>
+            <form onSubmit={handleSubmit} className='labels'>
+                <label>Email</label>
                 <input
                     name='email'
-                    onChange={handleChange}
+                    placeholder='jane@acme.com'
+                    type='email'
                     value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                 />
-                <br /><br />
-                <label > Password </label>
+                {errors.email && touched.email && (
+                    <div className='error'>{errors.email}</div>
+                )}
+                <br />
+                <label>Password</label>
                 <input
                     name='password'
-                    onChange={handleChange}
+                    placeholder='12345'
+                    type='password'
                     value={values.password}
-                /><br /><br />
-                <label > Confirm Password </label>
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                />
+                {errors.password && touched.password && (
+                    <div className='error'>{errors.password}</div>
+                )}
+                <br />
+                <label>Password Confirm</label>
                 <input
                     name='passwordConfirm'
-                    onChange={handleChange}
+                    placeholder='12345'
+                    type='password'
                     value={values.passwordConfirm}
-                /><br />
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                />
+                {errors.passwordConfirm && touched.passwordConfirm && (
+                    <div className='error'>{errors.passwordConfirm}</div>
+                )}
+                <br />
                 <br />
                 <button type='submit'>Submit</button>
+                <br />
+                <code>{JSON.stringify(values)}</code>
+                <br />
+                <br />
+                <br />
             </form>
         </div>
     )
