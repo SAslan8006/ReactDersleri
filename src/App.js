@@ -4,6 +4,7 @@ import About from './componenets/Route/About';
 import Contacts from './componenets/Contacts/index';
 import Users from './componenets/Route/Users';
 import User from './componenets/Route/User';
+import Error404 from './componenets/Route/Error404';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path='/users' element={<Users />} />
           <Route path='/user/:id' element={<User />} />
+          <Route path='*' element={<Error404 />} />
 
         </Routes>
       </div>
