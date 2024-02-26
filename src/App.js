@@ -4,49 +4,52 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 function App() {
   return (
     <div className='App'>
-      <div>
-        <h1>Any place in your app!</h1>
-        <Formik
-          initialValues={{ fname: '', lname: '', email: '', password: '' }}
-          validate={values => {
-            const errors = {};
-            if (!values.email) {
-              errors.email = 'Required';
-            } else if (
-              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-            ) {
-              errors.email = 'Invalid email address';
-            }
-            return errors;
-          }}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
-        >
-          {({ isSubmitting }) => (
-            <Form>
-              <label htmlFor='fname'>First Name: </label>
-              <Field type="text" placeholder="First Name" name="fname" />
-              <label htmlFor='lname'>Last Name: </label>
-              <Field type="text" placeholder="Last Name" name="lname" />
-              <label htmlFor='email'>E-mail: </label>
-              <Field type="email" placeholder="E-mail" name="email" />
-              <ErrorMessage name="email" component="div" />
-              <label htmlFor='password'>Password: </label>
-              <Field type="password" placeholder="Password" name="password" />
-              <ErrorMessage name="password" component="div" />
-              <button type="submit" disabled={isSubmitting}>
-                Submit
-              </button>
-            </Form>
-          )}
-        </Formik>
-      </div>
-    </div>
+      <h1>Sign Up</h1>
+      <Formik
+        initialValues={{
+          firstName: "",
+          lastName: "",
+          email: "",
+        }}
+        onSubmit={async (values) => {
+          await new Promise((r) => setTimeout(r, 500));
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        {({ handleSubmit, handleChange }) => (
+          <form onSubmit={handleSubmit}>
+            <label htmlFor='firstName'>First Name</label>
+            <input
+              id='firstName'
+              name='firstName'
+              placeholder='Jane'
+              onChange={handleChange}
+            />
+            <br />
 
+            <label htmlFor='lastName'>Last Name</label>
+            <input
+              id='lastName'
+              name='lastName'
+              placeholder='Doe'
+              onChange={handleChange}
+            />
+            <br />
+
+            <label htmlFor='email'>Email</label>
+            <input
+              id='email'
+              name='email'
+              placeholder='jane@acme.com'
+              type='email'
+              onChange={handleChange}
+            />
+            <br />
+            <button type='submit'>Submit</button>
+          </form>
+        )}
+      </Formik>
+    </div>
   );
 }
 
