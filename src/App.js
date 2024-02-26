@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from './componenets/Route/About';
 import Contacts from './componenets/Contacts/index';
 import Users from './componenets/Route/Users';
+import User from './componenets/Route/User';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
             <li><a href="/about">About</a></li>
             <li><a href="/contacts">Contacts</a></li>
             <li><a href='/users'>Users</a></li>
+            <li><a href='/user'>User</a></li>
+
           </ul>
         </nav>
         <Routes>
@@ -21,6 +24,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path='/users' element={<Users />} />
+          <Route path='/user/:id' element={<User />} />
+
         </Routes>
       </div>
 
