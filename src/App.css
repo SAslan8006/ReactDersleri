@@ -1,7 +1,12 @@
-.App {
+.dark {
   text-align: center;
-  justify-items: center;
+  background-color: black;
+  height: 100vh;
+  color: #fff;
 }
-label {
-  display: block;
+.light {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  color: #000000;
 }
