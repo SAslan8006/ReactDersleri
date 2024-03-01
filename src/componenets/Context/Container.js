@@ -5,7 +5,6 @@ import ThemeContext from '../../context/ThemeContext'
 
 function Container() {
     const { theme } = useContext(ThemeContext)
-    console.log(theme);
     return (
         <div className={theme}>
             <Header />
