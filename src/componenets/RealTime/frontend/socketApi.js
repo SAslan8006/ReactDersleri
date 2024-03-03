@@ -6,3 +6,7 @@ export const init = () => {
         { transports: ["websocket"] });
     socket.on("connect", () => { console.log("socket baglandi") })
 }
+
+export const send = (color) => {
+    socket.emit("newColor", color)
+}
