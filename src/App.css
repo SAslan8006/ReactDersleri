@@ -1,12 +1,16 @@
-.dark {
+.App {
   text-align: center;
-  background-color: black;
+  display: flex;
+  justify-content: center;
   height: 100vh;
-  color: #fff;
+  flex-direction: column;
 }
-.light {
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  height: 100vh;
-  color: #000000;
+.pallete {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.pallete button {
+  margin-top: 10px;
+  padding: 10px;
 }
