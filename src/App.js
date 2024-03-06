@@ -6,8 +6,7 @@ import Todo from './componenets/Test/Todo/index';
 function App() {
   return (
     <div className="App">
-      <Counter />
-      {/* <Todo /> */}
+      <Todo />
     </div>
   );
 }
