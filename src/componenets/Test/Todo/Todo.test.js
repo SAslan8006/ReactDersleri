@@ -7,7 +7,7 @@ describe("Todo testleri", () => {
     let button, input;
 
     beforeEach(() => {
-        render(<Todo />); w
+        render(<Todo />);
 
         button = screen.getByText("Add");
         input = screen.getByLabelText("Text");
