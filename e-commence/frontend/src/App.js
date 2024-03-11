@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
-import Product from './Products';
-import Signin from './Signin';
-import Signup from './components/pages/Auth/Signup';
+import Signup from './pages/Auth/Signup';
+import Products from './pages/Products';
+import Signin from './pages/Auth/Signin';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       </div>
       <div id="content">
         <Routes>
-          <Route path="/" exact Component={Product} />
+          <Route path="/" exact Component={Products} />
           <Route path="/signin" Component={Signin} />
           <Route path="/signup" Component={Signup} />
         </Routes>
