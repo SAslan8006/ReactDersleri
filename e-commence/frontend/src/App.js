@@ -1,8 +1,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
-import Signin from './components/Auth/Signin/index';
-import Signup from './components/Auth/Signup/index';
+import Product from './Products';
+import Signin from './Signin';
+import Signup from './components/pages/Auth/Signup';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       </div>
       <div id="content">
         <Routes>
-          <Route path="/" exact Component={Home} />
+          <Route path="/" exact Component={Product} />
           <Route path="/signin" Component={Signin} />
           <Route path="/signup" Component={Signup} />
         </Routes>
@@ -21,7 +22,5 @@ function App() {
   );
 }
 
-function Home() {
-  return <h1>Home</h1>
-}
+
 export default App;
