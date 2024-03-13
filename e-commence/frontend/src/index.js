@@ -2,14 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import "./reset.css";
-//Contexts
-import { AuthProvider } from './contexts/AuthContext';
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
+// contexts
+import { AuthProvider } from "./contexts/AuthContext";
+import { BasketProvider } from "./contexts/BasketContext";
+
 import { ChakraProvider } from "@chakra-ui/react";
-import { QueryClient, QueryClientProvider, } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -27,7 +30,9 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <ChakraProvider>
         <AuthProvider>
-          <App />
+          <BasketProvider>
+            <App />
+          </BasketProvider>
         </AuthProvider>
       </ChakraProvider>
       <ReactQueryDevtools initialIsOpen={false} />
