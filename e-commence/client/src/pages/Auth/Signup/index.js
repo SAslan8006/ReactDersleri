@@ -37,7 +37,6 @@ function Signup({ history }) {
 				login(registerResponse);
 
 				history.push("/profile");
-				console.log(registerResponse);
 			} catch (e) {
 				bag.setErrors({ general: e.response.data.message });
 			}

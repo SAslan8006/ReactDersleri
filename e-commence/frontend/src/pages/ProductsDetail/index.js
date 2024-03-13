@@ -9,9 +9,7 @@ function ProductDetail() {
     const { isLoading, error, data } = useQuery(['product', product_id], () => fetchProduct(product_id))
     if (isLoading) return 'Loading...';
     if (error) return 'An error has occurred: ' + error.message;
-    console.log(data);
     const images = data.photos.map((url) => ({ original: url }));
-    console.log(images);
     return (
         <div>
             <Button colorScheme="pink">Add to basket</Button>

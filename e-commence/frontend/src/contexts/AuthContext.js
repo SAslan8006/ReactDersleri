@@ -17,7 +17,6 @@ const AuthProvider = ({ children }) => {
                 setLoggedIn(true);
                 setUser(me);
                 setLoading(false);
-                console.log(me);
             } catch (error) {
                 setLoading(false);
             }

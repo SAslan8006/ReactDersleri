@@ -24,7 +24,6 @@ function Signin() {
                 });
                 login(loginResponse);
                 navigate('/profile'); // Programatik yönlendirme
-                console.log(loginResponse);
             } catch (e) {
                 bag.setErrors({ general: e.response.data.message });
             }

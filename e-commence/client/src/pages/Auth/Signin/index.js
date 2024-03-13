@@ -36,7 +36,6 @@ function Signin({ history }) {
 				login(loginResponse);
 
 				history.push("/profile");
-				console.log(loginResponse);
 			} catch (e) {
 				bag.setErrors({ general: e.response.data.message });
 			}
