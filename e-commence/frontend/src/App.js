@@ -7,6 +7,8 @@ import ProductDetail from './pages/ProductsDetail';
 import Signin from './pages/Auth/Signin';
 import Profile from './pages/Profile';
 import ProtectedRoute from './pages/ProtectedRoute';
+import Basket from './pages/Basket';
+import Error404 from './pages/Error404/index.js';
 
 function App() {
   return (
@@ -20,12 +22,9 @@ function App() {
           <Route path="/product/:product_id" Component={ProductDetail} />
           <Route path="/signin" Component={Signin} />
           <Route path="/signup" Component={Signup} />
-          <Route path="/profile" element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-          />
+          <Route path="/basket" Component={Basket} />
+          <Route path="*" element={<Error404 />} /> {/* Yıldız (*) yol eşleştirmesi */}
+          <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>} />
         </Routes>
       </div>
     </BrowserRouter>
