@@ -8,7 +8,11 @@ import Signin from './pages/Auth/Signin';
 import Profile from './pages/Profile';
 import ProtectedRoute from './pages/ProtectedRoute';
 import Basket from './pages/Basket';
-import Error404 from './pages/Error404/index.js';
+import Error404 from './pages/Error404';
+import Admin from './pages/Admin';
+import Home from './pages/Admin/Home';
+import Orders from './pages/Admin/Orders';
+import AdminProducts from './pages/Admin/Products';
 
 function App() {
   return (
@@ -25,6 +29,15 @@ function App() {
           <Route path="/basket" Component={Basket} />
           <Route path="*" element={<Error404 />} /> {/* Yıldız (*) yol eşleştirmesi */}
           <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>} />
+          <Route path="/admin" element={<ProtectedRoute> <Admin /> </ProtectedRoute>} />
+          <Route path="/admin/home" element={<ProtectedRoute> <Home /> </ProtectedRoute>} />
+          <Route path="/admin/orders" element={<ProtectedRoute> <Orders /> </ProtectedRoute>} />
+          <Route path="/admin/products" element={<ProtectedRoute> <AdminProducts /> </ProtectedRoute>} />
+          {/* 
+          
+          
+          <Route path="/admin/products/:product_id" element={<ProtectedRoute> <Admin /> </ProtectedRoute>} />
+          <Route path="/admin/addproduct" element={<ProtectedRoute> <Admin /> </ProtectedRoute>} /> */}
         </Routes>
       </div>
     </BrowserRouter>
