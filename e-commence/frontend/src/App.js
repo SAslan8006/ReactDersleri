@@ -33,11 +33,11 @@ function App() {
           <Route path="/admin/home" element={<ProtectedRoute> <Home /> </ProtectedRoute>} />
           <Route path="/admin/orders" element={<ProtectedRoute> <Orders /> </ProtectedRoute>} />
           <Route path="/admin/products" element={<ProtectedRoute> <AdminProducts /> </ProtectedRoute>} />
-          {/* 
-          
-          
+
+          {/*           
           <Route path="/admin/products/:product_id" element={<ProtectedRoute> <Admin /> </ProtectedRoute>} />
           <Route path="/admin/addproduct" element={<ProtectedRoute> <Admin /> </ProtectedRoute>} /> */}
+
         </Routes>
       </div>
     </BrowserRouter>
