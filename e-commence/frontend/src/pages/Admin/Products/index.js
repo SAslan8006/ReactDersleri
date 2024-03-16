@@ -59,7 +59,7 @@ function Products() {
                             cancelText="No"
                             placement='left'
                         >
-                            <a href='/' style={{ marginLeft: "10px" }}>Delete</a>
+                            <a href='#' style={{ marginLeft: "10px" }}>Delete</a>
                         </Popconfirm>
                     </>
                 )
